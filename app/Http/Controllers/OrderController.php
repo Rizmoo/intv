@@ -95,9 +95,10 @@ class OrderController extends Controller
             DB::table('orders')->where('id',$request->shp)->update([
                 'status'=> OrderStatus::ASSIGNED
             ]);
+            return response()->json('Success');
         }catch (\Exception $exception)
         {
-            
+            return response()->json('Error perfoming Task');
         }
 
     }
