@@ -5755,6 +5755,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Orders",
   data: function data() {
@@ -30459,24 +30462,31 @@ var render = function () {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(order.paid))]),
                         _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary btn-sm  mt-2 mb-2",
-                              attrs: {
-                                "data-bs-target": "#myModal",
-                                "data-bs-toggle": "modal",
-                              },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.assign(order.id)
+                        order.status === "paid"
+                          ? _c("td", [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-primary btn-sm  mt-2 mb-2",
+                                  attrs: {
+                                    "data-bs-target": "#myModal",
+                                    "data-bs-toggle": "modal",
+                                  },
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.assign(order.id)
+                                    },
+                                  },
                                 },
-                              },
-                            },
-                            [_vm._v(" Assign To Fleet ")]
-                          ),
-                        ]),
+                                [_vm._v(" Assign To Fleet ")]
+                              ),
+                            ])
+                          : _c("td", [
+                              _vm._v(
+                                "\n                                No Action Needed\n                         "
+                              ),
+                            ]),
                       ])
                     }),
                     0

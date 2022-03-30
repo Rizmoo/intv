@@ -56,9 +56,12 @@
                                 <td>{{ order.status }}</td>
                                 <td>{{ order.amount }}</td>
                                 <td>{{ order.paid }}</td>
-                                <td>
+                                <td v-if="order.status ==='paid' ">
                                     <button @click="assign(order.id)" class="btn btn-primary btn-sm  mt-2 mb-2" data-bs-target="#myModal" data-bs-toggle="modal"> Assign To Fleet </button>
                                 </td>
+                                <td v-else>
+                                    No Action Needed
+                             </td>
                             </tr>
                             </tbody>
                             <tbody v-else>
